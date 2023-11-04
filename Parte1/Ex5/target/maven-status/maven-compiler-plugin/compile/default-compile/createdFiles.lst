@@ -1,0 +1,7 @@
+pt\ipp\estg\ed\ex5\Ex5.class
+Exceptions\QueueEmptyException.class
+pt\ipp\estg\ed\ex5\QueueADT.class
+pt\ipp\estg\ed\ex5\MessageCodificator.class
+Exceptions\DifferentArraysSizeException.class
+pt\ipp\estg\ed\ex5\CircularArrayQueue.class
+Exceptions\QueueFullException.class

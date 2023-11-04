@@ -1,0 +1,23 @@
+A complexidade de tempo (Big O) para a operação dequeue em diferentes implementações de uma fila (Queue) varia dependendo da estrutura de dados utilizada:
+
+Array normal com deslocação de elementos (Array-Based Queue):
+
+Nesse tipo de fila, onde os elementos são armazenados no array e os elementos são deslocados quando ocorre uma operação dequeue, a complexidade de tempo é:
+
+dequeue: O(n) - A operação dequeue é de ordem n, pois envolve não apenas a remoção do elemento no início da fila como os deslocamentos dos restantes elementos.
+O tempo médio O(n) , onde "n" é o número de elementos na fila, devido às frequentes deslocações de elementos.
+
+Array circular com indicadores da posição de cabeça e cauda (Circular Queue):
+
+Nesse tipo de fila, a complexidade de tempo é a seguinte:
+
+dequeue: O(1) - A operação dequeue é uma operação de tempo constante em uma fila circular bem implementada, pois envolve apenas a atualização do índice de cabeça.
+A fila circular evita o problema de deslocamento de elementos que ocorre na implementação do array normal, tornando a operação dequeue eficiente.
+
+Lista ligada dinâmica (Linked List Queue):
+
+Nesse tipo de fila, onde os elementos são armazenados em uma lista ligada, a complexidade de tempo é a seguinte:
+
+dequeue: O(1) - A operação dequeue é uma operação de tempo constante, desde que se mantenha uma referência ao nó da frente da fila. A remoção de um nó no início de uma lista ligada é uma operação de tempo constante.
+
+Resumindo, a implementação da fila com array circular e a lista ligada dinâmica têm a operação dequeue mais eficiente, com complexidade O(1). No entanto, a implementação do array normal com deslocação de elementos pode ter um desempenho menos eficiente em relação ao tempo, especialmente à medida que a fila cresce, com uma complexidade de pior caso potencial de O(n) para dequeue.

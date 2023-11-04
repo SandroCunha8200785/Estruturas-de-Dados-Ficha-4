@@ -1,0 +1,17 @@
+Estrutura de dados subjacente:
+
+CircularArrayQueue usa um array (vetor) para armazenar os elementos da fila, enquanto LinkedQueue usa uma estrutura de lista encadeada.
+
+Complexidade da inserção (enqueue) e remoção (dequeue):
+
+Em CircularArrayQueue, a inserção e remoção de elementos têm uma complexidade de tempo O(1) na maioria dos casos, pois o array é usado de forma circular. A complexidade de tempo pode chegar a O(n) apenas quando o array precisa ser redimensionado.
+
+Uso de memória:
+
+CircularArrayQueue aloca um array de tamanho fixo no início, o que pode desperdiçar memória se o tamanho especificado for muito grande. No entanto, o tamanho não muda ao longo do tempo.
+LinkedQueue aloca memória dinamicamente à medida que os elementos são adicionados, economizando memória se a fila não estiver cheia, mas a alocação dinâmica de memória pode ter um custo em termos de desempenho.
+
+Inicialização da fila:
+
+CircularArrayQueue requer que o tamanho da fila seja especificado ao criar a instância, o que pode ser um problema se o tamanho não for conhecido antecipadamente.
+LinkedQueue não requer um tamanho inicial ao criar a instância, pois a lista encadeada cresce dinamicamente à medida que os elementos são adicionados.
