@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pt.ipp.estg.ed.ex4;
 
 import Exceptions.QueueEmptyException;
@@ -9,7 +6,7 @@ import java.util.Stack;
 
 /**
  *Classe que satisfaz a QueueADT usando duas pilhas
- * @author sssan
+ * @author SandroCunha8200785
  */
 public class TwoStackQueue<T> implements QueueADT<T>{
     

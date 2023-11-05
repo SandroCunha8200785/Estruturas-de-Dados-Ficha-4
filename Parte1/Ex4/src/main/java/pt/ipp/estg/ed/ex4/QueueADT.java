@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pt.ipp.estg.ed.ex4;
 
 import Exceptions.QueueEmptyException;
@@ -9,8 +6,8 @@ import pt.ipp.estg.ed.ex4.LinkedQueue.Node;
 
 
 /**
- *
- * @author sssan
+ * Adaptação da interface para dois tipos parametrizados de volta a satisfazer o exercicio4
+ * @author Sandro Cunha 8200785
  */
 public interface QueueADT<T, U> {
 

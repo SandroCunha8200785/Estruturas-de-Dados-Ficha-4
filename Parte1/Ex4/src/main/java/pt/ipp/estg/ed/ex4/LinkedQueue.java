@@ -1,19 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pt.ipp.estg.ed.ex4;
 
 import Exceptions.QueueEmptyException;
 
 /**
- *
- * @author sssan
+ * Fila com ista ligada que usa dois tipos parametrizados
+ * @author Sandro Cunha 8200785
  */
 public class LinkedQueue<T, U> implements QueueADT<T, U> {
     
     
 //----------------ClASSE PRIVADA DE NOS DA FILA-----------------------------
+    /**
+     * Classe para os nós da lista
+     * @param <T> tipo parametrizado 1
+     * @param <U> tipo parametrizado 2
+     */
     public static class Node<T, U> {
 
         private Node<T, U> next;
@@ -43,12 +45,20 @@ public class LinkedQueue<T, U> implements QueueADT<T, U> {
     
     
     //---------------------ATRIBUTOS DE INSTANCIA DA FILA-----------------------
-    
+    /**
+     * Nó com dois tipos parametrizados
+     */
     private Node<T, U> head, tail;
+    /**
+     * nr de elementos
+     */
     private int nElem;
 
     //------------------------CONSTRUTOR--------------------------------------
     
+    /**
+     * Construtor vazio
+     */
     public LinkedQueue() {
         this.head = null;
         this.tail = null;
@@ -58,25 +68,39 @@ public class LinkedQueue<T, U> implements QueueADT<T, U> {
     
     //-----------------------METODOS DA INTERFACE-------------------------------
     
+    /**
+     * Insere no fim da fila um novo nó com os dois tipos parametrizados
+     * @param element1 elemento 1
+     * @param element2 elemento q
+     * @throws NullPointerException elemento inexistente 
+     */
     @Override
     public void enqueue(T element1, U element2) throws NullPointerException {
         if (element1 == null || element2 == null) {
             throw new NullPointerException();
         }
-
+        
+        //Inicialização do no com dois elementos
         Node<T, U> newNode = new Node<T, U>(element1, element2);
-
+        
+        //Caso a fila esteja vazia
         if (this.tail == null) {
             this.head = newNode;
-        } else {
+        } 
+        //Insere no fim da fila ja com elementos existentes
+        else {
             this.tail.next = newNode;
         }
-
+        
         this.tail = newNode;
         this.nElem++;
     }
 
-    
+    /**
+     * Elimina da fila o elemento na cabeça
+     * @return elemento eliminado
+     * @throws QueueEmptyException fila vazia 
+     */
     @Override
     public Node<T, U> dequeue() throws QueueEmptyException{
         
@@ -91,7 +115,11 @@ public class LinkedQueue<T, U> implements QueueADT<T, U> {
         return node;
         
     }
-
+    
+    /**
+     * Mostra o primeiro elemento
+     * @return elemento na cabeça da fila
+     */
     @Override
     public  Node<T, U> first() {
         
@@ -100,21 +128,33 @@ public class LinkedQueue<T, U> implements QueueADT<T, U> {
         return node;
         
     }
-
+    
+    /**
+     * 
+     * @return true se a fila está vazia
+     */
     @Override
     public boolean isEmpty() {
         
         return this.head == null;
         
     }
-
+    
+    /**
+     * 
+     * @return nr de elemetos na fila 
+     */
     @Override
     public int size() {
         
         return this.nElem;
         
     }
-
+    
+    /**
+     * 
+     * @return textualização dos dados na lista
+     */
     @Override
     public String toString() {
         if(this.isEmpty()) return "\nLista vazia\n";

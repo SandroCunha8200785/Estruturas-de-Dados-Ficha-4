@@ -60,6 +60,7 @@ public class LinkedQueue<T> implements QueueADT<T> {
         if(element == null) throw new NullPointerException();
         Node<T> newNode = new Node<T>(element);
         
+        //Insere no fim da fila com elementos previos
         if(this.tail != null){
             
             this.tail.next = newNode;
@@ -68,7 +69,7 @@ public class LinkedQueue<T> implements QueueADT<T> {
             
         }
         
-        //Insere caso seja o primeiro elemento, neste caso, não há valor anterior a comparar
+        //Atualiza a cabeça e cauda caso seja o primeiro a ser inserido
         if(this.tail == null){ 
             
             this.head = newNode;
@@ -92,8 +93,11 @@ public class LinkedQueue<T> implements QueueADT<T> {
         if(this.isEmpty()) throw new QueueEmptyException();
         
         T elem = this.head.elem;
+        
+        //Cabeça aponta para o seu next
         this.head = this.head.next;
         
+        //Caso a fila fique vazia
         if(this.head == null) this.tail = null;
         
         this.nElem--;

@@ -7,7 +7,7 @@ import Exceptions.QueueEmptyException;
 
 /**
  *
- * @author sssan
+ * @author Sandro Cunha 8200785
  */
 public interface QueueADT<T> {
 

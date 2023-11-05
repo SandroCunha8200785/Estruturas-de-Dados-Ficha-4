@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pt.ipp.estg.ed.ex5;
 
 import Exceptions.QueueEmptyException;
 import Exceptions.QueueFullException;
 
 /**
- *
- * @author sssan
+ * 
+ * @author SandroCunha8200785
  */
 public interface QueueADT<T> {
 
@@ -42,14 +39,6 @@ public interface QueueADT<T> {
     public boolean isEmpty();
 
     /**
-     * Returns true if the queue array has no room for more elements.
-     *
-     * @return true if the queue is full
-     */
-    
-    public boolean isFull();
-
-    /**
      * Returns the number of elements in this queue.
      *
      * @return the integer representation of the size of this queue
@@ -63,4 +52,3 @@ public interface QueueADT<T> {
      */
     public String toString();
 }
-

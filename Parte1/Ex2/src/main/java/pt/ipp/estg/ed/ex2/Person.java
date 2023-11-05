@@ -1,31 +1,41 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pt.ipp.estg.ed.ex2;
 
 /**
- *
- * @author sssan
+ * Classe que representa uma pessoa
+ * @author SandroCunha8200785
  */
 public class Person implements Comparable<Person>{
     
     private String name;
     private int age;
     private double weight;
-
+    
+    /**
+     * Construtor vazio
+     */
     public Person() {
         this.age = 0;
         this.name = "";
         this.weight = 0.0;
     }
-
+    
+    /**
+     * Contrutor com atributos
+     * @param pName nome
+     * @param pAge idade
+     * @param pWeight peso
+     */
     public Person(String pName, int pAge, double pWeight) {
         this.name = pName;
         this.age = pAge;
         this.weight = pWeight;
     }
     
+    /**
+     * Construtor copia
+     * @param pPerson pessoa a copiar
+     */
     public Person(Person pPerson){
         
         this.name = pPerson.getName();
@@ -33,31 +43,58 @@ public class Person implements Comparable<Person>{
         this.weight = pPerson.getWeight();
         
     }
-
+    
+    /**
+     * devolve nome
+     * @return nome
+     */
     public String getName() {
         return name;
     }
-
+    
+    /**
+     * 
+     * @param name novo nome a definir
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+     /**
+      * 
+      * @return idade 
+      */
     public int getAge() {
         return age;
     }
-
+    
+    /**
+     * 
+     * @param age idade a definir 
+     */
     public void setAge(int age) {
         this.age = age;
     }
-
+    
+    /**
+     * 
+     * @return peso 
+     */
     public double getWeight() {
         return weight;
     }
-
+    
+    /**
+     * 
+     * @param weight ñovo peso a definir
+     */
     public void setWeight(double weight) {
         this.weight = weight;
     }
-
+    
+    /**
+     * 
+     * @return Textualização do objeto 
+     */
     @Override
     public String toString() {
         
@@ -69,13 +106,23 @@ public class Person implements Comparable<Person>{
         
         return sb.toString();
     }
-
+    
+    /**
+     * 
+     * @return deep copy do objeto
+     * @throws CloneNotSupportedException 
+     */
     @Override
     public Person clone() throws CloneNotSupportedException {
         
         return new Person(this);
     }
-
+    
+    /**
+     * 
+     * @param obj pessoa a comparar
+     * @return true se tiverem mesmo nome, idade e peso
+     */
     @Override
     public boolean equals(Object obj) {
         
@@ -96,7 +143,11 @@ public class Person implements Comparable<Person>{
         }
     }
 
-
+    /**
+     * Compara duas pessoas atraves da idade
+     * @param pPerson pessoa a comparar
+     * @return -1 se mais nova, 1 se for mais velha, 0 da mesma idade
+     */
     @Override
     public int compareTo(Person pPerson) {
         

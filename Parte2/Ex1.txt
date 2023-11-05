@@ -1,0 +1,15 @@
+Porquê que usamos uma implementação em array circular? Porque não um array normal como numa stack?
+
+R: Numa stack que utiliza um array, as operações Enqueue e Dequeue são efetuadas no ultimo elemento do array, 
+o que significa que apenas temos de inserir ou eliminar diretamente na posição "TOP" da Stack.
+Ao trabalharmos num Queue que utiliza um array, embora a operação Enqueue insira no ultimo elemento do array, 
+a operação Dequeue trabalha no inicio, o que implica que a remoção de um elemento tenha de arrastar todos os elementos uma posição,
+ou aplicar um "apontador" que indique onde começa a fila, mas é impraticavel porque ao fim de varios Dequeues iremos ter muitas posições 
+do array inuteis (Ex: se atualizarmos apenas um apontador de inicio de fila num array com 20 posições onde foram efetuados 19 Dequeues, temos o apontador para a posição 18 de 19 possiveis
+do array, permitindo apenas guardar um elemento).
+
+A utilização do array circular contorna estes problemas, usando dois "apontadores", um para a cabeça e outro para a cauda da fila.
+Assim, cada operação de Enqueue e Dequeue apenas opera sobre o respetivo "apontador", evitando deslocações de todos os elementos ou espaço desperdiçado.
+Sempre que é inserido um elemento na fila (cauda) e esta posição encontra-se no final do array, ele volta ao inicio e caso se encontrem posições livres
+(que não sejam a cabeça da fila) continua a armazenar elementos. Neste caso, o array encontra-se preenchido quando a cauda dá a volta completa ao array e encontra a cabeça d afila.
+

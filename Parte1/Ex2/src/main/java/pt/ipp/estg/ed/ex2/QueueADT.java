@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pt.ipp.estg.ed.ex2;
 
 import Exceptions.QueueEmptyException;
 import Exceptions.QueueFullException;
 
 /**
- *
- * @author sssan
+ * 
+ * @author SandroCunha8200785
  */
 public interface QueueADT<T> {
 
